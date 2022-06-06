@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 .footer {
@@ -17,32 +17,33 @@
 
 .image {
   width: 70%;
-  height: 50%;
+  height: 65%;
   margin-left: 20%;
 }
 
 .title {
-  font-size: 2rem;
-  margin: 2rem 0;
+  font-size: 3.25rem;
+  margin: 1.8rem 0;
+  font-weight:800;
+
+ 
 }
+ .span{
+    background-image: linear-gradient(90deg, #FF013C, #00E6F6);
+  background-clip: text;
+  color: transparent;
+ }
 
 .description {
-  line-height: 1;
+  line-height: 0.9;
   margin: 2rem 0;
   font-size: 1.2rem;
+  font-weight:350;
+  color:graytext
 }
 
-.button {
-  border-radius: 4px;
-  background-color: blue;
-  border: none;
-  color: #ffffff;
-  font-size: 15px;
-  padding: 20px;
-  width: 200px;
-  cursor: pointer;
-  margin-bottom: 2%;
-}
+
+
 @media (max-width: 1000px) {
   .main {
     width: 100%;
@@ -51,3 +52,108 @@
     align-items: center;
   }
 }
+
+
+.button,
+.button:after {
+  width: 75%;
+  height: 55px;
+  line-height: 55px;
+  font-size: 17px;
+  font-weight:480;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 2.2px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'BUY THE NFT LATER';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+
+
+.button:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button,
+  .button:after {
+    width: 75%;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+
